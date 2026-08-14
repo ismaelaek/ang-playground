@@ -1,0 +1,24 @@
+<div class="min-h-screen bg-gray-100 p-8">
+
+    <div class="mx-auto max-w-3xl">
+
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-900">
+                My Tasks
+            </h1>
+
+            <p class="mt-1 text-gray-500">
+                Manage your tasks
+            </p>
+        </div>
+
+        <div class="space-y-3">
+            @for (task of tasks(); track task.id) {
+            <app-task-card [task]="task" (completed)="completeTask($event)" />
+            }
+
+        </div>
+
+    </div>
+
+</div>

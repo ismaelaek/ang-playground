@@ -1,0 +1,27 @@
+<div class="flex items-center justify-between rounded-lg bg-white p-4 shadow-sm">
+
+    <div>
+        <h2 class="font-medium text-gray-900">
+            {{ task().title }}
+        </h2>
+
+        <p class="text-sm text-gray-500">
+            {{ task().completed ? 'Completed' : 'Pending' }}
+        </p>
+    </div>
+
+    @if (!task().completed) {
+
+    <button (click)="completeTask()" class="rounded-md px-3 py-1 text-sm text-green-600 hover:bg-green-50">
+        Complete
+    </button>
+
+    } @else {
+
+    <span class="text-sm font-medium text-green-600">
+        ✓ Done
+    </span>
+
+    }
+
+</div>
